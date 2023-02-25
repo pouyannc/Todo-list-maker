@@ -2,10 +2,10 @@ import removeIcon from '../icons/remove.png';
 import editIcon from '../icons/edit.png';
 import Todo from './todos';
 
-const getTodo = () => {
-  const todoTile = Object.assign(document.createElement('div'), { className: 'todo', id: Todo.todos.length - 1 });
+const getTodo = (todo, i) => {
+  const todoTile = Object.assign(document.createElement('div'), { className: 'todo', id: i });
 
-  const todoObj = Todo.todos.at(-1);
+  const todoObj = Todo.todos[i];
 
   todoTile.appendChild((Object.assign(document.createElement('input'), { type: 'checkbox' })));
   todoTile.appendChild((Object.assign(document.createElement('div'), { textContent: todoObj.title })));

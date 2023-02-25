@@ -15,7 +15,7 @@ const submitForm = (e) => {
 
     Todo.addTodo(e.target[0].value, e.target[1].value, e.target[2].value);
 
-    home.appendChild(getTodo());
+    home.appendChild(getTodo(Todo.todos.at(-1), Todo.todos.length - 1));
   } else {
     // Edit an existing todo item with index stored in e.target.id
 
@@ -27,9 +27,9 @@ const submitForm = (e) => {
     currentTodo.date = e.target[2].value;
 
     const currentTodoTile = document.getElementById(e.target.dataset.index);
-    home.replaceChild(getTodo(e), currentTodoTile);
+    home.replaceChild(getTodo(currentTodo, todoIndex), currentTodoTile);
 
-    e.target.id = -1;
+    e.target.dataset.index = -1;
   }
 
   e.target.reset();

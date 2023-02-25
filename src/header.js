@@ -9,6 +9,7 @@ const headerDiv = () => {
   title.textContent = 'TO-DO';
 
   const addBtn = document.createElement('img');
+  addBtn.id = 'add-button';
   addBtn.src = addIcon;
 
   header.appendChild(title);

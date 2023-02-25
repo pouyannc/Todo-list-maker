@@ -12,6 +12,6 @@ class Todo {
   }
 }
 
-Todo.addTodo('Study', 'javascript', 'Feb 19, 2023');
+Todo.addTodo('Study', 'javascript', '2023-03-01');
 
 export default Todo;
