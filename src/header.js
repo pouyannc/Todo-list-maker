@@ -1,5 +1,5 @@
 import addIcon from './icons/plus.png';
-import toggleForm from './toggle-form';
+import toggleForm from './functions/toggle-form';
 
 const headerDiv = () => {
   const header = document.createElement('div');

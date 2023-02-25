@@ -8,10 +8,13 @@ const panelDiv = () => {
   todayBtn.textContent = 'Today';
   const weekBtn = document.createElement('div');
   weekBtn.textContent = 'Week';
+  const projectsBtn = document.createElement('div');
+  weekBtn.textContent = 'Projects';
 
   panel.appendChild(homeBtn);
   panel.appendChild(todayBtn);
   panel.appendChild(weekBtn);
+  panel.appendChild(projectsBtn);
 
   return panel;
 };

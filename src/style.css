@@ -9,11 +9,16 @@ body{
 
 img{
   width: 40px;
+  cursor: pointer;
 }
 
 #content {
   display: flex;
   flex-direction: column;
+}
+
+#content.blur {
+  filter: blur(6px);
 }
 
 .header{
@@ -25,7 +30,7 @@ img{
   background-color: lightskyblue;
 }
 
-.page-body {
+.page-main {
   display: flex;
   justify-content: flex-start;
   height: 100vh;
@@ -62,11 +67,12 @@ img{
   background: #fff;
   visibility: hidden;
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 .form-container.show {
+  top: 50%;
   visibility: visible;
   opacity: 1;
-  transition: 0.5s;
+  transition: 0.2s;
 }

@@ -1,11 +1,12 @@
 import removeIcon from './icons/remove.png';
 import editIcon from './icons/edit.png';
-import todos from './todos';
+import Todo from './functions/todos';
 
 const homeDiv = () => {
   const home = document.createElement('div');
+  home.className = 'home';
 
-  todos.forEach((todo, i) => {
+  Todo.todos.forEach((todo, i) => {
     const todoDiv = home.appendChild(Object.assign(document.createElement('div'), { id: i, className: 'todo' }));
 
     todoDiv.appendChild((Object.assign(document.createElement('input'), { type: 'checkbox' })));
