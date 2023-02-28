@@ -39,13 +39,14 @@ img{
 .nav-panel {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 20px;
   width: 300px;
   text-align: center;
   font-size: 24px;
   background-color: aliceblue;
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .todo {
@@ -56,7 +57,7 @@ img{
   width: 600px;
 }
 
-.form-container {
+.form-container, .project-form-container {
   position: fixed;
   top: 40%;
   left: 50%;
@@ -70,7 +71,7 @@ img{
   transition: 0.2s;
 }
 
-.form-container.show {
+.form-container.show, .project-form-container.show {
   top: 50%;
   visibility: visible;
   opacity: 1;

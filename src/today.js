@@ -1,5 +1,6 @@
 import Todo from './functions/todos';
 import getTodo from './functions/get-todo';
+import toggleEdit from './functions/toggle-edit';
 
 const todayDiv = () => {
   const today = document.createElement('div');
@@ -15,6 +16,8 @@ const todayDiv = () => {
   Todo.todos.forEach((todo, i) => {
     if (todo.date === todayDate) today.appendChild(getTodo(todo, i));
   });
+
+  document.querySelectorAll('#edit-button').forEach((btn) => btn.addEventListener('click', toggleEdit));
 
   return today;
 };

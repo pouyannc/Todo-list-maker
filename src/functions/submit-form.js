@@ -6,16 +6,16 @@ import toggleEdit from './toggle-edit';
 const submitForm = (e) => {
   e.preventDefault();
 
-  const home = document.querySelector('.home');
+  const main = document.querySelector('.page-main');
   const content = document.querySelector('#content');
   const form = document.querySelector('.form-container');
 
   if (e.target.dataset.index === '-1') {
     // Create a new todo item.
 
-    Todo.addTodo(e.target[0].value, e.target[1].value, e.target[2].value);
+    Todo.addTodo(e.target[0].value, e.target[1].value, e.target[2].value, e.target[3].value);
 
-    home.appendChild(getTodo(Todo.todos.at(-1), Todo.todos.length - 1));
+    main.lastChild.appendChild(getTodo(Todo.todos.at(-1), Todo.todos.length - 1));
   } else {
     // Edit an existing todo item with index stored in e.target.id
 
@@ -24,10 +24,11 @@ const submitForm = (e) => {
     const currentTodo = Todo.todos[todoIndex];
     currentTodo.title = e.target[0].value;
     currentTodo.details = e.target[1].value;
-    currentTodo.date = e.target[2].value;
+    currentTodo.project = e.target[2].value;
+    currentTodo.date = e.target[3].value;
 
     const currentTodoTile = document.getElementById(e.target.dataset.index);
-    home.replaceChild(getTodo(currentTodo, todoIndex), currentTodoTile);
+    main.lastChild.replaceChild(getTodo(currentTodo, todoIndex), currentTodoTile);
 
     e.target.dataset.index = -1;
   }
