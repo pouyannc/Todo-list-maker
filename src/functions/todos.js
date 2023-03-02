@@ -4,6 +4,7 @@ class Todo {
     this.details = details;
     this.project = project;
     this.date = date;
+    this.checked = false;
   }
 
   static todos = [];
@@ -13,6 +14,6 @@ class Todo {
   }
 }
 
-Todo.addTodo('Study', 'javascript', 'General', '2023-03-01');
+Todo.addTodo('Get organized!', 'Set some todos', 'General', '2023-03-01');
 
 export default Todo;

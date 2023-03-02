@@ -13,13 +13,16 @@ const panelDiv = () => {
 
   const projectsLabel = document.createElement('div');
   projectsLabel.textContent = 'General';
+  projectsLabel.id = projectsLabel.textContent;
 
   const panelBottom = document.createElement('div');
+  panelBottom.className = 'panel-bottom';
   const projectsAdd = document.createElement('div');
   projectsAdd.textContent = 'Add Project Category';
   panelBottom.appendChild(projectsAdd);
 
   const panelTop = document.createElement('div');
+  panelTop.className = 'panel-top';
   panelTop.appendChild(homeBtn);
   panelTop.appendChild(todayBtn);
   panelTop.appendChild(weekBtn);

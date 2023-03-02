@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Rubik&display=swap');
+
 *{
   box-sizing: border-box;
 }
 
 body{ 
   margin: 0;
-  
+  font-family: 'Quicksand', sans-serif;
 }
 
 img{
@@ -33,7 +35,7 @@ img{
 .page-main {
   display: flex;
   justify-content: flex-start;
-  height: 100vh;
+  height: 85vh;
 }
 
 .nav-panel {
@@ -41,20 +43,69 @@ img{
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
-  width: 300px;
+  width: 260px;
   text-align: center;
   font-size: 24px;
   background-color: aliceblue;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.nav-panel div {
+  cursor: pointer;
+}
+
+.nav-panel div :hover {
+  font-weight: 800;
+  color: rgb(24, 1, 55);
+}
+
+.panel-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.panel-bottom {
+  border-top: solid black 2px;
+  padding-top: 10px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 80px;
+
+}
+
+.todo-container img {
+  width: 24px;
 }
 
 .todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  width: 600px;
+  width: 640px;
+  border: solid black 2px;
+  padding: 12px 36px;
+  font-size: 18px;
+  background-color: rgb(249, 244, 251);
+}
+
+.todo.checked {
+  opacity: 0.5;
+}
+
+#empty-project {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#empty-project:hover {
+  font-weight: 700;
+  color:rgb(151, 0, 0);
 }
 
 .form-container, .project-form-container {
@@ -62,8 +113,8 @@ img{
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  padding: 50px;
+  width: 320px;
+  padding: 38px;
   box-shadow: 0 5px 30px rgba(0,0,0,.3);
   background: #fff;
   visibility: hidden;
@@ -76,4 +127,10 @@ img{
   visibility: visible;
   opacity: 1;
   transition: 0.2s;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

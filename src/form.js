@@ -15,7 +15,7 @@ const formDiv = () => {
 
   form.appendChild(Object.assign(document.createElement('label'), { for: 'details', textContent: 'Details:' }));
   form.appendChild(Object.assign(document.createElement('textarea'), {
-    cols: 40, rows: 5, name: 'details:', id: 'details-field',
+    cols: 40, rows: 3, name: 'details:', id: 'details-field',
   }));
 
   form.appendChild(Object.assign(document.createElement('label'), { for: 'project', textContent: 'Project:' }));

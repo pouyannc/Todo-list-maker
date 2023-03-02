@@ -13,6 +13,7 @@ const submitProject = (e) => {
 
   const newProject = document.createElement('div');
   newProject.textContent = projectName;
+  newProject.id = newProject.textContent;
   panelTop.appendChild(newProject);
 
   const todoFormProjects = document.querySelector('#projects-field');

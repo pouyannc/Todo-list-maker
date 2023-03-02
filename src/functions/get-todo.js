@@ -7,9 +7,12 @@ const getTodo = (todo, i) => {
 
   const todoObj = Todo.todos[i];
 
-  todoTile.appendChild((Object.assign(document.createElement('input'), { type: 'checkbox' })));
+  const checkbox = todoTile.appendChild((Object.assign(document.createElement('input'), { id: 'checkbox', type: 'checkbox' })));
+  if (todo.checked) checkbox.checked = true;
+  if (todo.checked) todoTile.classList.add('checked');
+
   todoTile.appendChild((Object.assign(document.createElement('div'), { textContent: todoObj.title })));
-  todoTile.appendChild(Object.assign(document.createElement('div'), { textContent: todoObj.date }));
+  todoTile.appendChild(Object.assign(document.createElement('div'), { textContent: new Date(todoObj.date.replace(/-/g, '/')).toDateString() }));
   todoTile.appendChild(Object.assign(document.createElement('img'), { src: editIcon, id: 'edit-button' }));
   todoTile.appendChild(Object.assign(document.createElement('img'), { src: removeIcon, id: 'remove-button' }));
 

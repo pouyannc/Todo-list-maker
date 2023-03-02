@@ -1,10 +1,11 @@
 import Todo from './functions/todos';
 import getTodo from './functions/get-todo';
 import toggleEdit from './functions/toggle-edit';
+import removeTodo from './functions/remove-todo';
 
 const todayDiv = () => {
   const today = document.createElement('div');
-  today.className = 'today';
+  today.className = 'todo-container';
 
   let todayDate = new Date();
   const dd = String(todayDate.getDate()).padStart(2, '0');
@@ -17,7 +18,8 @@ const todayDiv = () => {
     if (todo.date === todayDate) today.appendChild(getTodo(todo, i));
   });
 
-  document.querySelectorAll('#edit-button').forEach((btn) => btn.addEventListener('click', toggleEdit));
+  today.querySelectorAll('#edit-button').forEach((btn) => btn.addEventListener('click', toggleEdit));
+  today.querySelectorAll('#remove-button').forEach((btn) => btn.addEventListener('click', removeTodo));
 
   return today;
 };
