@@ -1,4 +1,5 @@
 import Todo from './todos';
+import renderTab from './render-tab';
 
 const removeTodo = (e) => {
   const currentTodoIndex = e.target.parentNode.id;
@@ -7,6 +8,8 @@ const removeTodo = (e) => {
 
   const currentTodoTile = document.getElementById(currentTodoIndex);
   document.querySelector('.page-main').lastChild.removeChild(currentTodoTile);
+
+  renderTab();
 };
 
 export default removeTodo;

@@ -6,10 +6,13 @@ const panelDiv = () => {
 
   const homeBtn = document.createElement('div');
   homeBtn.textContent = 'All';
+  homeBtn.id = 'all';
   const todayBtn = document.createElement('div');
   todayBtn.textContent = 'Today';
+  todayBtn.id = 'today';
   const weekBtn = document.createElement('div');
   weekBtn.textContent = 'This Week';
+  weekBtn.id = 'week';
 
   const projectsLabel = document.createElement('div');
   projectsLabel.textContent = 'General';

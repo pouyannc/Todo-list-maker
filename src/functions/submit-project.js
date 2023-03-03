@@ -1,5 +1,5 @@
 import toggleProjectForm from './toggle-project';
-import projectDiv from '../project';
+import itemsDiv from '../todos-display';
 
 const submitProject = (e) => {
   e.preventDefault();
@@ -20,7 +20,7 @@ const submitProject = (e) => {
   todoFormProjects.appendChild(Object.assign(document.createElement('option'), { value: projectName, textContent: projectName }));
 
   const main = document.querySelector('.page-main');
-  newProject.addEventListener('click', () => { main.replaceChild(projectDiv(projectName), main.lastChild); });
+  newProject.addEventListener('click', () => { main.replaceChild(itemsDiv(projectName), main.lastChild); });
 
   e.target.reset();
   content.classList.toggle('blur');

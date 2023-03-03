@@ -1,7 +1,7 @@
 import Todo from './todos';
 import getTodo from './get-todo';
 import toggleForm from './toggle-form';
-import toggleEdit from './toggle-edit';
+import renderTab from './render-tab';
 
 const submitForm = (e) => {
   e.preventDefault();
@@ -38,7 +38,7 @@ const submitForm = (e) => {
   form.classList.toggle('show');
   content.removeEventListener('click', toggleForm);
 
-  document.querySelectorAll('#edit-button').forEach((btn) => btn.addEventListener('click', toggleEdit));
+  renderTab();
 };
 
 export default submitForm;
