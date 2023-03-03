@@ -10,7 +10,7 @@ const formDiv = () => {
 
   form.appendChild(Object.assign(document.createElement('label'), { for: 'title', textContent: 'Title:' }));
   form.appendChild(Object.assign(document.createElement('input'), {
-    type: 'text', name: 'title:', id: 'title-field', required: true,
+    type: 'text', name: 'title:', id: 'title-field', maxLength: '60', required: true,
   }));
 
   form.appendChild(Object.assign(document.createElement('label'), { for: 'details', textContent: 'Details:' }));

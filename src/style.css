@@ -27,15 +27,16 @@ img{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 60px;
+  padding: 20px 60px;
   font-size: 40px;
-  background-color: lightskyblue;
+  background-color: rgb(196, 77, 77);
+  color: white;
 }
 
 .page-main {
   display: flex;
   justify-content: flex-start;
-  height: 85vh;
+  height: 90vh;
 }
 
 .nav-panel {
@@ -46,9 +47,8 @@ img{
   width: 260px;
   text-align: center;
   font-size: 24px;
-  background-color: aliceblue;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  background-color: rgb(255, 248, 240);
+  padding: 30px 10px;
 }
 
 .nav-panel div {
@@ -75,8 +75,7 @@ img{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 50px 80px;
-
+  padding: 40px 40px;
 }
 
 .todo-container img {
@@ -87,11 +86,12 @@ img{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 640px;
+  width: 800px;
   border: solid black 2px;
   padding: 12px 36px;
   font-size: 18px;
   background-color: rgb(249, 244, 251);
+  gap: 10px;
 }
 
 .todo.checked {
@@ -134,3 +134,4 @@ img{
   flex-direction: column;
   gap: 10px;
 }
+
