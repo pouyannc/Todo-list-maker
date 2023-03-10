@@ -33,6 +33,8 @@ const submitForm = (e) => {
     e.target.dataset.index = -1;
   }
 
+  localStorage.setItem('todos', JSON.stringify(Todo.todos)); // adding to localstorage
+
   e.target.reset();
   content.classList.toggle('blur');
   form.classList.toggle('show');

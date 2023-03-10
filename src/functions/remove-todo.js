@@ -6,6 +6,8 @@ const removeTodo = (e) => {
 
   Todo.todos.splice(currentTodoIndex, 1);
 
+  localStorage.setItem('todos', JSON.stringify(Todo.todos)); // adding to localstorage
+
   const currentTodoTile = document.getElementById(currentTodoIndex);
   document.querySelector('.page-main').lastChild.removeChild(currentTodoTile);
 

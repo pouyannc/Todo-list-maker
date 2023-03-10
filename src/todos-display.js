@@ -4,6 +4,7 @@ import Todo from './functions/todos';
 import toggleEdit from './functions/toggle-edit';
 import toggleCheck from './functions/toggle-check';
 import renderTab from './functions/render-tab';
+import { projects } from './functions/submit-project';
 
 const itemsDiv = (tab) => {
   const display = document.createElement('div');
@@ -47,10 +48,17 @@ const itemsDiv = (tab) => {
       const navTop = document.querySelector('.panel-top');
       display.appendChild(Object.assign(document.createElement('div'), { id: 'empty-project', textContent: 'No items left... Click here to delete project.' }))
         .addEventListener('click', () => {
+          const projectsIdx = projects.indexOf(tab);
+          if (projectsIdx !== -1) {
+            projects.splice(projectsIdx, 1);
+          }
+          localStorage.setItem('projects', JSON.stringify(projects));
+
           const formProjectField = document.querySelector('#projects-field');
           const currentProjectFieldOption = document.querySelector(`option[value="${tab}"`);
           formProjectField.removeChild(currentProjectFieldOption);
           navTop.removeChild(document.querySelector(`#${tab}`));
+
           renderTab('all');
         });
     }

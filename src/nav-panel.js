@@ -1,3 +1,4 @@
+import { projects } from './functions/submit-project';
 import toggleProjectForm from './functions/toggle-project';
 
 const panelDiv = () => {
@@ -14,9 +15,7 @@ const panelDiv = () => {
   weekBtn.textContent = 'This Week';
   weekBtn.id = 'week';
 
-  const projectsLabel = document.createElement('div');
-  projectsLabel.textContent = 'General';
-  projectsLabel.id = projectsLabel.textContent;
+  if (projects === []) projects.push('General');
 
   const panelBottom = document.createElement('div');
   panelBottom.className = 'panel-bottom';
@@ -29,7 +28,6 @@ const panelDiv = () => {
   panelTop.appendChild(homeBtn);
   panelTop.appendChild(todayBtn);
   panelTop.appendChild(weekBtn);
-  panelTop.appendChild(projectsLabel);
 
   panel.appendChild(panelTop);
   panel.appendChild(panelBottom);

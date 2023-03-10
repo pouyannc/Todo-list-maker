@@ -21,8 +21,7 @@ const formDiv = () => {
   form.appendChild(Object.assign(document.createElement('label'), { for: 'project', textContent: 'Project:' }));
   form.appendChild(Object.assign(document.createElement('select'), {
     name: 'projects:', id: 'projects-field',
-  }))
-    .appendChild(Object.assign(document.createElement('option'), { value: 'General', textContent: 'General' }));
+  }));
 
   form.appendChild(Object.assign(document.createElement('label'), { for: 'date', textContent: 'Date:' }));
   form.appendChild(Object.assign(document.createElement('input'), {

@@ -5,10 +5,13 @@ import itemsDiv from './todos-display';
 import renderTab from './functions/render-tab';
 import { formDiv, projectFormDiv } from './form';
 import submitForm from './functions/submit-form';
-import submitProject from './functions/submit-project';
+import { renderProjectList, submitProject } from './functions/submit-project';
+import Todo from './functions/todos';
 
 const content = document.getElementById('content');
 content.appendChild(headerDiv());
+
+if ('todos' in localStorage) Todo.todos = JSON.parse(localStorage.getItem('todos'));
 
 const main = document.createElement('div');
 main.className = 'page-main';
@@ -30,7 +33,8 @@ document.body.appendChild(projectForm);
 navPanel.firstChild.childNodes[0].addEventListener('click', () => { renderTab('all'); });
 navPanel.firstChild.childNodes[1].addEventListener('click', () => { renderTab('today'); });
 navPanel.firstChild.childNodes[2].addEventListener('click', () => { renderTab('week'); });
-navPanel.firstChild.childNodes[3].addEventListener('click', () => { renderTab('General'); });
+
+renderProjectList();
 
 form.addEventListener('submit', submitForm);
 projectForm.addEventListener('submit', submitProject);

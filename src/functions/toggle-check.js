@@ -11,6 +11,8 @@ const toggleCheck = (e) => {
     currentTodo.checked = true;
   }
 
+  localStorage.setItem('todos', JSON.stringify(Todo.todos)); // adding to localstorage
+
   renderTab();
 };
 
